@@ -1,0 +1,6 @@
+{
+    "table": "ClientModel",
+    "filters": {
+        "email": "johndoe@example.com"
+    }
+}

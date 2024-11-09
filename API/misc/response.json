@@ -1,0 +1,13 @@
+[
+    {
+        "id": 1,
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "johndoe@example.com",
+        "cellphone": "1234567890",
+        "createdAt": "2024-11-09T07:17:58",
+        "createdBy": "admin",
+        "modifiedOn": "2024-11-09T07:17:58",
+        "modifiedBy": "admin"
+    }
+]
