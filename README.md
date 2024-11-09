@@ -44,17 +44,15 @@ This API allows dynamic querying, insertion, and updating of records across mult
 
 <table>
 <tr>
-<th align="center" padding="0">
-<img width="441" height="0px">
-<p><small>Example 1</small></p>
+<th align="center" padding="0" width=441px>
+<p><small>No filters returns all instances</small></p>
 </th>
-<th align="center" padding="0">
-<img width="441" height="0px">
-<p><small>Example 2</small></p>
+<th align="center" padding="0" width=441px>
+<p><small>With filters returns all instances that match filter</small></p>
 </th>
 </tr>
 <tr>
-<td style="width: 100%; vertical-align: top; padding: 0px;">
+<td style="padding: 0px;">
   
 ```json
 {
@@ -65,7 +63,7 @@ This API allows dynamic querying, insertion, and updating of records across mult
 
   
 ```
-</td> <td style="width: 100%; vertical-align: top; padding: 0px;">
+</td> <td style="padding: 0px;">
 
 ```json
 {
