@@ -80,10 +80,10 @@ For this example we'll request the instance(s) from a specific Table
 
 <table>
 <tr>
-<th align="center" padding="0" width=441px>
+<th align="center" padding="0" width=400px>
 <p><small>All instances from Table</small></p>
 </th>
-<th align="center" padding="0" width=441px>
+<th align="center" padding="0" width=400px>
 <p><small>All instances that match filter</small></p>
 </th>
 </tr>
