@@ -52,7 +52,7 @@ For this example we'll request the instance(s) from a specific Table
 <tr>
 <td style="padding: 0px;">
   
-```json
+```jsonc
 {
   "table": "ClientModel"
 }
@@ -63,7 +63,7 @@ For this example we'll request the instance(s) from a specific Table
 ```
 </td> <td style="padding: 0px;">
 
-```json
+```jsonc
 {
     "table": "ClientModel",
     "filters": {
@@ -90,7 +90,7 @@ For this example we'll request the instance(s) from a specific Table
 <tr>
 <td style="padding: 0px;">
  
-```json
+```jsonc
 [
     {
         "cellphone": "1234567890",
@@ -119,7 +119,7 @@ For this example we'll request the instance(s) from a specific Table
 ```
 </td> <td style="padding: 0px;">
 
-```json
+```jsonc
 [
     {
         "cellphone": "1234567890",
@@ -153,13 +153,13 @@ For this example we'll request the instance(s) from a specific Table
 ### **POST**
 #### Insert Payload Example:
 For this example we'll Insert data into a specified table
-```jsonc 
+```jsonc
 {
     "table": "ClientModel",
     "data": {
-        "firstName": "Sam",
-        "lastName": "Somebody",
-        "email": "somebody@example.com",
+        "firstName": "John",
+        "lastName": "Doe",
+        "email": "johndoe@example.com",
         "cellphone": "15236585585",
         "createdBy": "admin",
         "modifiedBy": "admin"
@@ -168,12 +168,15 @@ For this example we'll Insert data into a specified table
 ```
 
 ### Response Payload Example:
-```jsonc 
+```jsonc
 {
-    "id": 2,
+    "id": 1,
     "message": "Record inserted successfully"
 }
+// This will return a 201 Status Code
 ``` 
+In case of sending duplicate values to unique values column the following error will prompt:
+
 
 ## Error Handling
 Each endpoint will return an error message with a status code for invalid input, missing records, or issues with database operations.
