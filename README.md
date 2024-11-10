@@ -1,4 +1,4 @@
-# Dynamic Database API
+# Python RESTful API
 
 This API allows dynamic querying, insertion, and updating of records across multiple database tables based on the request payload. By specifying the table name and relevant data in the payload, users can interact with specific tables using a single endpoint.
 
@@ -37,18 +37,16 @@ This API allows dynamic querying, insertion, and updating of records across mult
 
 ## Endpoints
 
-### **GET**  
-- Query Data from a Table:
-
-### Request Payload Examples:
-
+### **GET**
+#### Request Payload Examples:
+For this example we'll request the instance(s) from a specific Table
 <table>
 <tr>
 <th align="center" padding="0" width=441px>
-<p><small>No filters returns all instances</small></p>
+<p><small>No filters field</small></p>
 </th>
 <th align="center" padding="0" width=441px>
-<p><small>With filters returns all instances that match filter</small></p>
+<p><small>With filters api will return all instances that match filter</small></p>
 </th>
 </tr>
 <tr>
@@ -59,7 +57,7 @@ This API allows dynamic querying, insertion, and updating of records across mult
   "table": "ClientModel"
 }
 
-
+// Api will return all instances from Table 
 
   
 ```
@@ -67,11 +65,11 @@ This API allows dynamic querying, insertion, and updating of records across mult
 
 ```json
 {
-  "table": "ClientModel",
-  "filters": {
-    "email": "johndoe@example.com",
-    "lastName": "Doe"
-  }
+    "table": "ClientModel",
+    "filters": {
+        "email": "johndoe@example.com",
+        "lastName": "Doe"
+    }
 }
 ```
 </td>
@@ -79,21 +77,103 @@ This API allows dynamic querying, insertion, and updating of records across mult
 </table>
 
 ### Response Payload Examples:
-   ```json
-    [
-        {
-            "cellphone": "1234567890",
-            "createdAt": "Sat, 09 Nov 2024 19:25:57 GMT",
-            "createdBy": "admin",
-            "email": "johndoe@example.com",
-            "firstName": "John",
-            "id": 1,
-            "lastName": "Doe",
-            "modifiedBy": "admin",
-            "modifiedOn": "Sat, 09 Nov 2024 19:25:57 GMT"
-        }
-    ]
-   ```  
+
+<table>
+<tr>
+<th align="center" padding="0" width=441px>
+<p><small>All instances from Table</small></p>
+</th>
+<th align="center" padding="0" width=441px>
+<p><small>All instances that match filter</small></p>
+</th>
+</tr>
+<tr>
+<td style="padding: 0px;">
+ 
+```json
+[
+    {
+        "cellphone": "1234567890",
+        "createdAt": "Sun, 10 Nov 2024 01:07:40 GMT",
+        "createdBy": "admin",
+        "email": "johndoe@example.com",
+        "firstName": "John",
+        "id": 1,
+        "lastName": "Doe",
+        "modifiedBy": "admin",
+        "modifiedOn": "Sun, 10 Nov 2024 01:07:40 GMT"
+    },
+    {
+        "cellphone": "15236585585",
+        "createdAt": "Sun, 10 Nov 2024 01:09:05 GMT",
+        "createdBy": "admin",
+        "email": "somebody@example.com",
+        "firstName": "Sam",
+        "id": 2,
+        "lastName": "Somebody",
+        "modifiedBy": "admin",
+        "modifiedOn": "Sun, 10 Nov 2024 01:09:05 GMT"
+    },
+    ...
+]
+```
+</td> <td style="padding: 0px;">
+
+```json
+[
+    {
+        "cellphone": "1234567890",
+        "createdAt": "Sun, 10 Nov 2024 01:07:40 GMT",
+        "createdBy": "admin",
+        "email": "johndoe@example.com",
+        "firstName": "John",
+        "id": 1,
+        "lastName": "Doe",
+        "modifiedBy": "admin",
+        "modifiedOn": "Sun, 10 Nov 2024 01:07:40 GMT"
+    }
+]
+
+
+
+
+
+
+
+
+
+
+
+
+``` 
+</td>
+</tr>
+</table>
+
+### **POST**
+#### Insert Payload Example:
+For this example we'll Insert data into a specified table
+```jsonc 
+{
+    "table": "ClientModel",
+    "data": {
+        "firstName": "Sam",
+        "lastName": "Somebody",
+        "email": "somebody@example.com",
+        "cellphone": "15236585585",
+        "createdBy": "admin",
+        "modifiedBy": "admin"
+    }
+}
+```
+
+### Response Payload Example:
+```jsonc 
+{
+    "id": 2,
+    "message": "Record inserted successfully"
+}
+``` 
 
 ## Error Handling
 Each endpoint will return an error message with a status code for invalid input, missing records, or issues with database operations.
