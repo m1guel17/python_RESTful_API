@@ -1,7 +1,5 @@
-from API.mapping.modelMapping import model_mapping
 from API.services.model import Model
 from API.credentials import CREDENTIALS
-from API import db
 
 from flask import jsonify, request
 from functools import wraps
