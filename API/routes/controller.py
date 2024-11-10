@@ -30,7 +30,7 @@ def require_basic_auth(f):
         return f(*args, **kwargs)
     return decorated_function
 
-def getpost(app):
+def entryRoute(app):
     @app.route('/api', methods=['GET', 'POST', 'PUT'])
     @require_basic_auth
     def api():

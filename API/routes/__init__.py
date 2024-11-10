@@ -1,5 +1,5 @@
-from API.routes.controller import getpost
+from API.routes.controller import entryRoute
 
 
 def Routes(app):
-    getpost(app)
+    entryRoute(app)
