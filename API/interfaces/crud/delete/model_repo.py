@@ -5,8 +5,8 @@ from API import db
     CURRENT_DIRECTORY - CURRENT_FILENAME script to (...insert the use for this script)
     ----------------------------------------------------------------------------
     >Created: 2024-11-09
-    >Last_modified: 2024-11-09
-    >Author: __name__
+    >Last_modified: 2024-11-14
+    >Author: Miguel
 """
 
 class ModelRepository:
